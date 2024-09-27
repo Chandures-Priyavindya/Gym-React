@@ -1,0 +1,85 @@
+
+.navbar {
+    background-color: #4b4f6b;
+  }
+
+  .navbar-brand,
+  .nav-link {
+    color: #fff !important;
+  }
+
+  .banner {
+    background-color: #e0e0e0;
+    padding: 40px 0;
+  }
+
+  .banner-text {
+    text-align: center;
+  }
+
+  .banner-text h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .banner-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .plan-card {
+    background-color: #333;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  .plan-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 4px solid #a15cd2;
+  }
+  .plan-card:hover {
+    transform: scale(1.05);
+  }
+  .plan-body {
+    padding: 15px;
+  }
+  .plan-body p {
+    margin: 0;
+  }
+  .section-title {
+    color: #a15cd2;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .view-trainers {
+    text-align: right;
+    margin-right: 20px;
+  }
+  .view-trainers a {
+    color: #a15cd2;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .view-trainers a:hover {
+    text-decoration: underline;
+  }
+  .modal-body img {
+    border-radius: 10px;
+  }
+  .modal-body h5 {
+    color: #a15cd2;
+    margin-top: 20px;
+  }
+  .modal-footer button {
+    width: 100px;
+  }
+  .footer {
+          background-color: #111;
+          color: #fff;
+          padding: 20px 0;
+          text-align: center;
+      }

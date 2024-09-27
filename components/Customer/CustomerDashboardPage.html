@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym React - User Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="CustomerDashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">GYM REACT - User Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#About-section">About</a>
+          </li>
+          <li class="nav-item">
+            <!-- Link to the BMI section -->
+            <a class="nav-link" href="#bmi-section">Calculate BMI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Trainer">Trainers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Exercises">Exercises</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Questinaries">Questionary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner Section -->
+  <section class="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 banner-text">
+          <h1>Welcome to Gym React</h1>
+          <p>Effortless Strength, Timely Gains: Building Better Bodies, Faster</p>
+          <p>Unlock Your Strength, Shape Your Future.</p>
+          <p>Transform Today for a Stronger Tomorrow.</p>
+          <p>Focused Fitness, Real Results.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://th.bing.com/th/id/OIP.Eh3dnAjqa1k1GPHcW1KvggHaE8?w=244&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            class="img-fluid" alt="Fitness Image">
+        </div>
+      </div>
+      <div id="About-section" class="row mt-3">
+        <div class="col-md-12 text-center">
+          <p>Gym React is your go-to platform for personalized fitness. We create custom workout and meal plans based on
+            your BMI, helping you achieve your goals efficiently. Whether you're looking for expert guidance or just
+            starting out, our app connects you with professional coaches and a supportive community. Track your
+            progress, stay motivated, and experience a fitness journey tailored just for you.</p>
+          <p><strong>Join Gym React today and take the first step toward a healthier, stronger you.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BMI Calculator Section with ID -->
+  <section id="bmi-section" class="bmi-section">
+    <div class="container">
+      <h2>Calculate Your BMI</h2>
+      <form class="bmi-form" onsubmit="calculateBMI(event)">
+        <div class="mb-3">
+          <label for="weight" class="form-label">Weight (kg)</label>
+          <input type="number" class="form-control" id="weight" placeholder="Enter weight" required>
+        </div>
+        <div class="mb-3">
+          <label for="height" class="form-label">Height (cm)</label>
+          <input type="number" class="form-control" id="height" placeholder="Enter height" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate BMI</button>
+      </form>
+
+      <!-- BMI result card -->
+      <div class="bmi-card" id="bmiCard" onclick="openPopup()">
+        <h3>Your BMI: <span id="bmiResult"></span></h3>
+        <img src="https://th.bing.com/th/id/R.684883e26cdad2368c920e22b3e20553?rik=BtEGYpUzkUODMQ&pid=ImgRaw&r=0"
+          alt="Diet Image">
+        <h4>KETO DIET</h4>
+        <p>5 Meals</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pop-up Modal -->
+  <div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popupModalLabel">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Here is more detailed information about your BMI and your personalized meal plan.</p>
+          <img src="https://th.bing.com/th/id/R.684883e26cdad2368c920e22b3e20553?rik=BtEGYpUzkUODMQ&pid=ImgRaw&r=0"
+            alt="Diet Image" class="img-fluid" style="height: 300px; width: 400px;">
+          <ul>
+            <li>Meal 1: Avocado & Egg Salad</li>
+            <li>Meal 2: Grilled Chicken & Veggies</li>
+            <li>Meal 3: Salmon & Spinach</li>
+            <li>Meal 4: Beef Stir-fry</li>
+            <li>Meal 5: Keto Smoothie</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="goToPlanButton">Go to plan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Trainer Cards -->
+<div id="Trainer" class="container">
+  <h2 class="text-center text-primary mb-4">Our Expert Trainer Plans</h2>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="trainer-card" data-bs-toggle="modal" data-bs-target="#trainerModal1">
+        <img src="https://th.bing.com/th/id/R.21e02809db66973828fe7f669d6e9bc5?rik=ZQcuEsD0bzmZ3g&pid=ImgRaw&r=0" alt="Dr. John Smith">
+        <div class="trainer-card-body">
+          <h5>Dr. John Smith</h5>
+          <p>(Body Building Coach)</p>
+          <p><strong>Beginner Plan</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="trainer-card" data-bs-toggle="modal" data-bs-target="#trainerModal2">
+        <img src="https://www.insure4sport.co.uk/blog/wp-content/uploads/sites/9/2022/02/iStock-1324042769.jpg" alt="Dr. John Doe">
+        <div class="trainer-card-body">
+          <h5>Dr. John Doe</h5>
+          <p>(Gym Trainer)</p>
+          <p><strong>Muscle Building Plan</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="trainer-card" data-bs-toggle="modal" data-bs-target="#trainerModal3">
+        <img src="https://th.bing.com/th/id/R.e9e3755bc092c01fe1981ca4790dd891?rik=PD%2fTNw%2fNoEtftw&pid=ImgRaw&r=0" alt="Dr. Amarajeewa">
+        <div class="trainer-card-body">
+          <h5>Dr. Amarajeewa</h5>
+          <p>(Gym Coach)</p>
+          <p><strong>Fat Loss Plan</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="trainer-card" data-bs-toggle="modal" data-bs-target="#trainerModal4">
+        <img src="https://thumbs.dreamstime.com/z/gym-instructor-24614227.jpg" alt="Mrs. Lilly Doe">
+        <div class="trainer-card-body">
+          <h5>Mrs. Lilly Doe</h5>
+          <p>(Prof. Fitness Coach)</p>
+          <p><strong>Endurance Plan</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="view-all">
+    <a href="#">View All Trainers →</a>
+  </div>
+</div>
+
+<!-- Modals for each Trainer -->
+<!-- Modal for Trainer 1 -->
+<div class="modal fade" id="trainerModal1" tabindex="-1" aria-labelledby="trainerModal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <h5>Dr. John Smith</h5>
+        <img src="https://th.bing.com/th/id/OIP.c28Ocj2ZV1NUN5Z5_v8tuwHaEJ?rs=1&pid=ImgDetMain" class="img-fluid rounded" alt="Trainer Image">
+        <p class="mt-3"><strong>Beginner Plan</strong></p>
+        <p>Goal: Build a foundation and get used to regular exercise.</p>
+        <button type="button" class="btn btn-primary" onclick="navigateToPage()">Pay Now</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Trainer 2 -->
+<div class="modal fade" id="trainerModal2" tabindex="-1" aria-labelledby="trainerModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <h5>Dr. John Doe</h5>
+        <img src="https://th.bing.com/th/id/R.e4d7b37ee2b73f629bed57c355b0bc96?rik=fg0vW6AUGEFtyA&pid=ImgRaw&r=0" class="img-fluid rounded" alt="Trainer Image">
+        <p class="mt-3"><strong>Muscle Building Plan</strong></p>
+        <p>Goal: Increase muscle mass through structured workouts.</p>
+        <button type="button" class="btn btn-primary" onclick="navigateToPage()">Pay Now</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Trainer 3 -->
+<div class="modal fade" id="trainerModal3" tabindex="-1" aria-labelledby="trainerModal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <h5>Dr. Amarajeewa</h5>
+        <img src="https://th.bing.com/th/id/OIP.JRn9uVJUzDPteUVsd7tx5QHaGh?rs=1&pid=ImgDetMain" class="img-fluid rounded" alt="Trainer Image">
+        <p class="mt-3"><strong>Fat Loss Plan</strong></p>
+        <p>Goal: Burn fat and increase endurance through cardio.</p>
+        <button type="button" class="btn btn-primary" onclick="navigateToPage()">Pay Now</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Trainer 4 -->
+<div class="modal fade" id="trainerModal4" tabindex="-1" aria-labelledby="trainerModal4Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <h5>Mrs. Lilly Doe</h5>
+        <img src="https://th.bing.com/th/id/OIP.aZx0-cSDtt5GnD6qJhZR1wAAAA?rs=1&pid=ImgDetMain" class="img-fluid rounded" alt="Trainer Image">
+        <p class="mt-3"><strong>Endurance Plan</strong></p>
+        <p>Goal: Improve stamina and endurance through focused exercises.</p>
+        <button type="button" class="btn btn-primary" onclick="navigateToPage()">Pay Now</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <!-- Questinaries -->
+  <div id="Questinaries" class="container mt-5"></div>
+  <h1 class="text-center" style="color: #6A5ACD;">Body Growth Questionary</h1>
+
+  <!-- Question UIs -->
+  <div id="question1" class="question-container text-center">
+    <h3>01) Which body part are you most interested in growing?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(2, 'Arms')">Arms</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(2, 'Legs')">Legs</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(2, 'Chest')">Chest</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(2, 'Back')">Back</button>
+  </div>
+
+  <div id="question2" class="question-container text-center d-none">
+    <h3>02) What is your primary goal?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(3, 'Increase muscle mass')">Increase muscle
+      mass</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(3, 'Improve strength')">Improve strength</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(3, 'Enhance endurance')">Enhance endurance</button>
+  </div>
+
+  <div id="question3" class="question-container text-center d-none">
+    <h3>03) How many days per week do you work out?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(4, '1-2 days')">1-2 days</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(4, '3-4 days')">3-4 days</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(4, '5-6 days')">5-6 days</button>
+  </div>
+
+  <div id="question4" class="question-container text-center d-none">
+    <h3>04) Do you prefer strength or hypertrophy training?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(5, 'Strength')">Strength</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(5, 'Hypertrophy')">Hypertrophy</button>
+  </div>
+
+  <div id="question5" class="question-container text-center d-none">
+    <h3>05) What time of the day do you work out?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(6, 'Morning')">Morning</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(6, 'Afternoon')">Afternoon</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(6, 'Evening')">Evening</button>
+  </div>
+
+  <div id="question6" class="question-container text-center d-none">
+    <h3>06) Do you track your calories?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(7, 'Yes')">Yes</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(7, 'No')">No</button>
+  </div>
+
+  <div id="question7" class="question-container text-center d-none">
+    <h3>07) How much water do you drink per day?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(8, '1-2 liters')">1-2 liters</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(8, '2-3 liters')">2-3 liters</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(8, 'More than 3 liters')">More than 3 liters</button>
+  </div>
+
+  <div id="question8" class="question-container text-center d-none">
+    <h3>08) How often do you take rest days?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(9, 'Once a week')">Once a week</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(9, 'Twice a week')">Twice a week</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(9, 'Rarely')">Rarely</button>
+  </div>
+
+  <div id="question9" class="question-container text-center d-none">
+    <h3>09) Do you use supplements?</h3>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(10, 'Yes')">Yes</button>
+    <button class="btn btn-custom mx-2" onclick="showNextQuestion(10, 'No')">No</button>
+  </div>
+
+  <div id="question10" class="question-container text-center d-none">
+    <h3>10) What is your sleep schedule like?</h3>
+    <button class="btn btn-custom mx-2" onclick="showResults('6-8 hours')">6-8 hours</button>
+    <button class="btn btn-custom mx-2" onclick="showResults('More than 8 hours')">More than 8 hours</button>
+    <button class="btn btn-custom mx-2" onclick="showResults('Less than 6 hours')">Less than 6 hours</button>
+  </div>
+
+  <!-- Result UI -->
+  <div id="result" class="question-container text-center d-none">
+    <h3>Your Answers:</h3>
+    <div id="answerList"></div>
+    <button class="btn btn-primary mt-3" onclick="startOver()">Start Over</button>
+  </div>
+
+  </div>
+  <!-- Our Popular Exercises -->
+<div id="Exercises" class="container mt-5">
+  <div class="row">
+    <div class="col-8">
+      <h2 class="text-end exercise-header" style="margin-right: 20px;">Our Popular Exercises</h2>
+    </div>
+    <div class="col-4 text-end view-all">
+      <a href="#">View All Exercises →</a>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <!-- Warm Up -->
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <div class="exercise-card" data-bs-toggle="modal" data-bs-target="#warmupModal">
+        <img src="https://th.bing.com/th/id/OIP.tAAARmZMg0F_XLc9WH4yaQHaE8?rs=1&pid=ImgDetMain" alt="Warm Up">
+        <h5 class="mt-3">Warm up</h5>
+        <p>15 min • 3 sets • 100 calories</p>
+      </div>
+    </div>
+
+    <!-- Arm Workout -->
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <div class="exercise-card" data-bs-toggle="modal" data-bs-target="#armWorkoutModal">
+        <img src="https://www.shutterstock.com/image-photo/young-wellbuilt-man-go-sports-260nw-1326788396.jpg" alt="Arm Workout">
+        <h5 class="mt-3">Arm Workout</h5>
+        <p>20 min • 4 sets • 150 calories</p>
+      </div>
+    </div>
+
+    <!-- Yoga Session -->
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <div class="exercise-card" data-bs-toggle="modal" data-bs-target="#yogaSessionModal">
+        <img src="https://c8.alamy.com/comp/EA3GD1/group-yoga-sessions-EA3GD1.jpg" alt="Yoga Session">
+        <h5 class="mt-3">Yoga Session</h5>
+        <p>55 min • 5 sets • 250 calories</p>
+      </div>
+    </div>
+
+    <!-- Work Session -->
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <div class="exercise-card" data-bs-toggle="modal" data-bs-target="#legWorkoutModal">
+        <img src="https://th.bing.com/th/id/R.fae0ed5287470294b5672929d77d6487?rik=sE74EN06DP8vSQ&riu=http%3a%2f%2fyegfitness.ca%2fwp-content%2fuploads%2f2018%2f04%2fgroup-fitness1.jpg&ehk=ANI%2fgiqHoIW2LEX3YE7TuRS5CD7MLgoArIPDSrb2OQg%3d&risl=&pid=ImgRaw&r=0" alt="Leg Workout">
+        <h5 class="mt-3">Work Session</h5>
+        <p>55 min • 5 sets • 250 calories</p>
+      </div>
+    </div>
+
+    <!-- Leg Workout -->
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <div class="exercise-card" data-bs-toggle="modal" data-bs-target="#legWorkoutModal">
+        <img src="https://th.bing.com/th/id/OIP.kKOqvgc7xgUyckEj7IxsogHaE8?w=622&h=415&rs=1&pid=ImgDetMain" alt="Leg Workout">
+        <h5 class="mt-3">Leg Workout</h5>
+        <p>18 min • 4 sets • 120 calories</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+<!-- Warmup Modal -->
+<div class="modal fade" id="warmupModal" tabindex="-1" aria-labelledby="warmupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="warmupModalLabel">Warm up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://th.bing.com/th/id/OIP.tAAARmZMg0F_XLc9WH4yaQHaE8?rs=1&pid=ImgDetMain" alt="Warm Up" class="img-fluid mb-3">
+        <p><strong>Duration:</strong> 15 minutes</p>
+        <p><strong>Structure:</strong> 3 sets of 5 minutes each</p>
+        <p><strong>Includes:</strong> Dynamic stretches (arm swings, leg swings), light cardio (jogging in place, jumping jacks)</p>
+        <p><strong>Benefits:</strong> Increases heart rate and circulation, prepares muscles for intense activity, enhances flexibility, and reduces injury risk</p>
+        <p><strong>Estimated calorie burn:</strong> 100 calories</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Arm Workout Modal -->
+<div class="modal fade" id="armWorkoutModal" tabindex="-1" aria-labelledby="armWorkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="armWorkoutModalLabel">Arm Workout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://www.shutterstock.com/image-photo/young-wellbuilt-man-go-sports-260nw-1326788396.jpg" alt="Arm Workout" class="img-fluid mb-3">
+        <p><strong>Duration:</strong> 20 minutes</p>
+        <p><strong>Structure:</strong> 4 sets of 5 minutes each</p>
+        <p><strong>Includes:</strong> Bicep curls, tricep dips, shoulder press</p>
+        <p><strong>Benefits:</strong> Strengthens arm muscles, enhances endurance</p>
+        <p><strong>Estimated calorie burn:</strong> 150 calories</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Yoga Session Modal -->
+<div class="modal fade" id="yogaSessionModal" tabindex="-1" aria-labelledby="yogaSessionModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="yogaSessionModalLabel">Yoga Session</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://c8.alamy.com/comp/EA3GD1/group-yoga-sessions-EA3GD1.jpg" alt="Yoga Session" class="img-fluid mb-3">
+        <p><strong>Duration:</strong> 55 minutes</p>
+        <p><strong>Structure:</strong> 5 sets of 11 minutes each</p>
+        <p><strong>Includes:</strong> Asanas, breathing exercises, meditation</p>
+        <p><strong>Benefits:</strong> Improves flexibility, promotes relaxation</p>
+        <p><strong>Estimated calorie burn:</strong> 250 calories</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Workout Modal -->
+<div class="modal fade" id="legWorkoutModal" tabindex="-1" aria-labelledby="legWorkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="legWorkoutModalLabel">Leg Workout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://th.bing.com/th/id/R.fae0ed5287470294b5672929d77d6487?rik=sE74EN06DP8vSQ&riu=http%3a%2f%2fyegfitness.ca%2fwp-content%2fuploads%2f2018%2f04%2fgroup-fitness1.jpg&ehk=ANI%2fgiqHoIW2LEX3YE7TuRS5CD7MLgoArIPDSrb2OQg%3d&risl=&pid=ImgRaw&r=0" alt="Leg Workout" class="img-fluid mb-3">
+        <p><strong>Duration:</strong> 18 minutes</p>
+        <p><strong>Structure:</strong> 4 sets of 4.5 minutes each</p>
+        <p><strong>Includes:</strong> Squats, lunges, calf raises</p>
+        <p><strong>Benefits:</strong> Strengthens leg muscles, improves balance</p>
+        <p><strong>Estimated calorie burn:</strong> 120 calories</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Leg Workout Modal -->
+<div class="modal fade" id="legWorkoutModal" tabindex="-1" aria-labelledby="legWorkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="legWorkoutModalLabel">Leg Workout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://th.bing.com/th/id/OIP.t-av2DnxmaleuTeigSgs5wHaE8?rs=1&pid=ImgDetMain" alt="Leg Workout" class="img-fluid mb-3">
+        <p><strong>Duration:</strong> 18 minutes</p>
+        <p><strong>Structure:</strong> 4 sets of 4.5 minutes each</p>
+        <p><strong>Includes:</strong> Squats, lunges, calf raises</p>
+        <p><strong>Benefits:</strong> Strengthens leg muscles, improves balance</p>
+        <p><strong>Estimated calorie burn:</strong> 120 calories</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer Section -->
+  <footer id="footer" class="footer mt-4">
+    <div class="container">
+        <div class="row footer-content">
+            <div class="col-md-4 footer-about">
+                <h3>GYM</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown USA</p>
+                <p><i class="fas fa-envelope"></i> gtechgym@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+            </div>
+            <div class="col-md-4 footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li>Strength Training</li>
+                    <li>Yoga Session</li>
+                    <li>Deadlift Challenge</li>
+                    <li>Squats Challenge</li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Pricing Plan</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    function calculateBMI(event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      // Get user input
+      const weight = document.getElementById('weight').value;
+      const height = document.getElementById('height').value / 100; // Convert height from cm to meters
+
+      // Calculate BMI
+      const bmi = (weight / (height * height)).toFixed(2);
+
+      // Display the BMI result
+      document.getElementById('bmiResult').innerText = bmi;
+
+      // Show the BMI card
+      document.getElementById('bmiCard').style.display = 'block';
+    }
+
+    function openPopup() {
+      // Trigger the Bootstrap modal to open
+      var popupModal = new bootstrap.Modal(document.getElementById('popupModal'));
+      popupModal.show();
+    }
+    document.getElementById('goToPlanButton').addEventListener('click', function () {
+      window.location.href = '/src/components/Customer/Meal/MealDays.html';
+    });
+    const answers = {};
+
+    function showNextQuestion(nextQuestion, answer) {
+      // Hide the current question
+      document.getElementById('question' + (nextQuestion - 1)).classList.add('d-none');
+
+      // Store the answer
+      answers['Question ' + (nextQuestion - 1)] = answer;
+
+      // Show the next question
+      document.getElementById('question' + nextQuestion).classList.remove('d-none');
+    }
+
+    function showResults(finalAnswer) {
+      // Store the final answer
+      answers['Question 10'] = finalAnswer;
+
+      // Hide the last question
+      document.getElementById('question10').classList.add('d-none');
+
+      // Show the result section
+      const answerList = document.getElementById('answerList');
+      answerList.innerHTML = '';
+      for (const [question, answer] of Object.entries(answers)) {
+        const p = document.createElement('p');
+        p.textContent = `${question}: ${answer}`;
+        answerList.appendChild(p);
+      }
+      document.getElementById('result').classList.remove('d-none');
+    }
+
+    function startOver() {
+      // Reset answers
+      for (let i = 1; i <= 10; i++) {
+        document.getElementById('question' + i).classList.add('d-none');
+      }
+      document.getElementById('result').classList.add('d-none');
+      document.getElementById('question1').classList.remove('d-none');
+    }
+    function navigateToPage() {
+    // Use a relative or absolute URL depending on your project structure
+    window.location.href = 'RegisterPage.html';
+  }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

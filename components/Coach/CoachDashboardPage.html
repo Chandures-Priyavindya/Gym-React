@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym React - Coach Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="CoachDashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">GYM REACT - Coach Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#About-section">About</a>
+          </li>
+          <li class="nav-item">
+            <!-- Link to the BMI section -->
+            <a class="nav-link" href="#plans">Myplans</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner Section -->
+  <section class="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 banner-text">
+          <h1>Welcome to Gym React</h1>
+          <p>Effortless Strength, Timely Gains: Building Better Bodies, Faster</p>
+          <p>Unlock Your Strength, Shape Your Future.</p>
+          <p>Transform Today for a Stronger Tomorrow.</p>
+          <p>Focused Fitness, Real Results.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://th.bing.com/th/id/OIP.wKiKCE1gGLDXZHY2IPtyigHaE7?rs=1&pid=ImgDetMain"
+            class="img-fluid" alt="Fitness Image">
+        </div>
+      </div>
+      <div id="About-section" class="row mt-3">
+        <div class="col-md-12 text-center">
+          <p>Gym React is your go-to platform for personalized fitness. We create custom workout and meal plans based on
+            your BMI, helping you achieve your goals efficiently. Whether you're looking for expert guidance or just
+            starting out, our app connects you with professional coaches and a supportive community. Track your
+            progress, stay motivated, and experience a fitness journey tailored just for you.</p>
+          <p><strong>Join Gym React today and take the first step toward a healthier, stronger you.</strong></p>
+          <button type="button" class="btn btn-primary" onclick="openLocalFile()">Add Plans</button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Plans Section -->
+  <div class="container my-5" id="plans">
+    <h2 class="section-title">My Plans</h2>
+    <div class="row g-4">
+      <!-- Beginner Plan Card -->
+      <div class="col-md-4 col-lg-2">
+        <div class="plan-card" data-bs-toggle="modal" data-bs-target="#beginnerModal">
+          <img src="https://th.bing.com/th/id/OIP.eedfodecsW5qc65n6on-wQHaE8?rs=1&pid=ImgDetMain" alt="Beginner Plan">
+          <div class="plan-body">
+            <h5 class="plan-title">Beginner <br>Plan</h5>
+            <p>• Duration: 15 minutes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Muscle Building Plan Card -->
+      <div class="col-md-4 col-lg-2">
+        <div class="plan-card" data-bs-toggle="modal" data-bs-target="#muscleModal">
+          <img src="https://thumbs.dreamstime.com/b/confident-motivated-fitness-coach-posing-gym-105270802.jpg" alt="Muscle Building Plan">
+          <div class="plan-body">
+            <h5 class="plan-title">Muscle Building Plan</h5>
+            <p>• Duration: 20 minutes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fat Loss Plan Card -->
+      <div class="col-md-4 col-lg-2">
+        <div class="plan-card" data-bs-toggle="modal" data-bs-target="#fatLossModal">
+          <img src="https://th.bing.com/th/id/OIP.0mVoDUZhQm7cX2BvZSvPkAAAAA?rs=1&pid=ImgDetMain" alt="Fat Loss Plan">
+          <div class="plan-body">
+            <h5 class="plan-title">Fat Loss<br> Plan</h5>
+            <p>• Duration: 55 minutes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Endurance Plan Card -->
+      <div class="col-md-4 col-lg-2">
+        <div class="plan-card" data-bs-toggle="modal" data-bs-target="#enduranceModal">
+          <img src="https://as2.ftcdn.net/v2/jpg/05/55/11/83/1000_F_555118362_QcZ90FOzNYBnuNH5j5W0Sj2DDpPbMCPf.jpg" alt="Endurance Plan">
+          <div class="plan-body">
+            <h5 class="plan-title">Endurance<br>Plan</h5>
+            <p>• Duration: 55 minutes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Functional Fitness Plan Card -->
+      <div class="col-md-4 col-lg-2">
+        <div class="plan-card" data-bs-toggle="modal" data-bs-target="#functionalModal">
+          <img src="https://th.bing.com/th/id/OIP.dv0GO3kx6UZMC9NMjOMMqQHaE8?w=612&h=408&rs=1&pid=ImgDetMain" alt="Functional Fitness Plan">
+          <div class="plan-body">
+            <h5 class="plan-title">Functional Fitness Plan</h5>
+            <p>• Duration: 18 minutes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-trainers">
+      <a href="#">View All Trainers →</a>
+    </div>
+  </div>
+
+  <!-- Modal for Beginner Plan -->
+  <div class="modal fade" id="beginnerModal" tabindex="-1" aria-labelledby="beginnerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="https://th.bing.com/th/id/OIP.eedfodecsW5qc65n6on-wQHaE8?rs=1&pid=ImgDetMain" class="img-fluid" alt="Beginner Plan">
+          <h5 class="modal-title text-center mt-3">Beginner Plan</h5>
+          <p><strong>• Duration:</strong> 15 minutes</p>
+          <p><strong>• Structure:</strong> 3 sets of 5 minutes each</p>
+          <p><strong>• Includes:</strong> Dynamic stretches (arm swings, leg swings), light cardio (jogging in place, jumping jacks)</p>
+          <p><strong>• Benefits:</strong> Increases heart rate and circulation / Prepares muscles for intense activity / Enhances flexibility and reduces injury risk</p>
+          <p><strong>• Estimated calorie burn:</strong> 100 calories</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Muscle Building Plan -->
+  <div class="modal fade" id="muscleModal" tabindex="-1" aria-labelledby="muscleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="https://thumbs.dreamstime.com/b/confident-motivated-fitness-coach-posing-gym-105270802.jpg" class="img-fluid" alt="Muscle Building Plan">
+          <h5 class="modal-title text-center mt-3">Muscle Building Plan</h5>
+          <p><strong>• Duration:</strong> 20 minutes</p>
+          <p><strong>• Structure:</strong> 4 sets of 5 minutes each</p>
+          <p><strong>• Includes:</strong> Strength training (push-ups, squats), moderate cardio</p>
+          <p><strong>• Benefits:</strong> Builds muscle mass, increases strength, boosts metabolism</p>
+          <p><strong>• Estimated calorie burn:</strong> 150 calories</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Fat Loss Plan -->
+  <div class="modal fade" id="fatLossModal" tabindex="-1" aria-labelledby="fatLossModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="https://th.bing.com/th/id/OIP.0mVoDUZhQm7cX2BvZSvPkAAAAA?rs=1&pid=ImgDetMain" class="img-fluid" alt="Fat Loss Plan">
+          <h5 class="modal-title text-center mt-3">Fat Loss Plan</h5>
+          <p><strong>• Duration:</strong> 55 minutes</p>
+          <p><strong>• Structure:</strong> 3 sets of 15 minutes cardio, 10 minutes strength training</p>
+          <p><strong>• Includes:</strong> High-intensity interval training (HIIT), moderate strength exercises</p>
+          <p><strong>• Benefits:</strong> Burns fat, increases stamina, improves cardiovascular health</p>
+          <p><strong>• Estimated calorie burn:</strong> 500 calories</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Endurance Plan -->
+  <div class="modal fade" id="enduranceModal" tabindex="-1" aria-labelledby="enduranceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="https://as2.ftcdn.net/v2/jpg/05/55/11/83/1000_F_555118362_QcZ90FOzNYBnuNH5j5W0Sj2DDpPbMCPf.jpg" class="img-fluid" alt="Endurance Plan">
+          <h5 class="modal-title text-center mt-3">Endurance Plan</h5>
+          <p><strong>• Duration:</strong> 55 minutes</p>
+          <p><strong>• Structure:</strong> 5 sets of 10 minutes each</p>
+          <p><strong>• Includes:</strong> Long cardio sessions (running, cycling), bodyweight exercises</p>
+          <p><strong>• Benefits:</strong> Improves endurance, increases stamina, boosts overall cardiovascular health</p>
+          <p><strong>• Estimated calorie burn:</strong> 600 calories</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Functional Fitness Plan -->
+  <div class="modal fade" id="functionalModal" tabindex="-1" aria-labelledby="functionalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="https://th.bing.com/th/id/OIP.dv0GO3kx6UZMC9NMjOMMqQHaE8?w=612&h=408&rs=1&pid=ImgDetMain" class="img-fluid" alt="Functional Fitness Plan">
+          <h5 class="modal-title text-center mt-3">Functional Fitness Plan</h5>
+          <p><strong>• Duration:</strong> 18 minutes</p>
+          <p><strong>• Structure:</strong> 3 sets of 6 minutes each</p>
+          <p><strong>• Includes:</strong> Functional exercises (lunges, burpees), balance training</p>
+          <p><strong>• Benefits:</strong> Improves flexibility, increases core strength, enhances mobility</p>
+          <p><strong>• Estimated calorie burn:</strong> 120 calories</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Footer Section -->
+  <footer id="footer" class="footer mt-4">
+    <div class="container">
+        <div class="row footer-content">
+            <div class="col-md-4 footer-about">
+                <h3>GYM</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown USA</p>
+                <p><i class="fas fa-envelope"></i> gtechgym@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+            </div>
+            <div class="col-md-4 footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li>Strength Training</li>
+                    <li>Yoga Session</li>
+                    <li>Deadlift Challenge</li>
+                    <li>Squats Challenge</li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Pricing Plan</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    function openLocalFile() {
+        const filePath = "AddPlanPage.html";
+        window.location.href = filePath;
+    }
+</script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

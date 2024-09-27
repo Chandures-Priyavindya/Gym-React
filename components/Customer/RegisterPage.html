@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>GYM - Registration</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #898780;
+        }
+        .header {
+            background: #4a4e69;
+            padding: 10px 20px;
+        }
+        .logo {
+            font-size: 28px;
+            color: #040404;
+            font-weight: bold;
+        }
+        .registration-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            background: #1d1f27;
+        }
+        .registration-form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+        }
+        .footer {
+            background-color: #2b2b2b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .social-icons i {
+            margin: 0 10px;
+            color: #5e5eff;
+            cursor: pointer;
+        }
+        .social-icons i:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="registration">
+        <header class="header d-flex justify-content-between align-items-center">
+            <div class="logo">G Y M - R E A C T Customer</div>
+            <nav class="nav">
+                <ul class="list-inline mb-0 ">
+                    <li class="list-inline-item"><a href="#">Home</a></li>
+                    <li class="list-inline-item"><a href="#about">About</a></li>
+                    <li class="list-inline-item"><a href="#bmi-calculator">Calculate BMI</a></li>
+                    <li class="list-inline-item"><a href="#trainers">Trainers</a></li>
+                    <li class="list-inline-item"><a href="#services-section">Services</a></li>
+                    <li class="list-inline-item"><a href="#exercises">Exercises</a></li>
+                    <li class="list-inline-item"><a href="#pricing-plans">Pricing Plan</a></li>
+                    <li class="list-inline-item"><a href="#q">Questionary</a></li>
+                    <li class="list-inline-item"><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="registration" class="registration-section">
+            <div class="registration-form-container">
+                <h2 class="text-center">User Register</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" id="age" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender" required>
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+                <p class="text-center mt-3">Already have an account? <a href="LoginPage.html">Login</a></p>
+            </div>
+        </section>
+
+        <footer id="footer" class="footer">
+            <div class="footer-content d-flex justify-content-around">
+                <div class="footer-about">
+                    <h3>GYM</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown USA</p>
+                    <p><i class="fas fa-envelope"></i> gtechgym@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul class="list-unstyled">
+                        <li>Strength Training</li>
+                        <li>Yoga Session</li>
+                        <li>Deadlift Challenge</li>
+                        <li>Squats Challenge</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Link</h4>
+                    <ul class="list-unstyled">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Pricing Plan</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex justify-content-center">
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym React Coach Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #1e1e1e;
+      color: #898080;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #4a4e69;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+    }
+
+    .logo {
+      font-size: 28px;
+      color: #040404;
+      font-weight: bold;
+    }
+
+    .nav ul {
+      display: flex;
+      list-style: none;
+      font-size: 15px;
+    }
+
+    .nav ul li {
+      margin: 0 10px;
+    }
+
+    .nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav ul li a:hover {
+      color: #6a5acd;
+    }
+
+    .nav ul li a.btn {
+      background: #6a5acd;
+      padding: 8px 15px;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .nav ul li a.btn:hover {
+      background: #5a4eab;
+    }
+
+    /* Login Page Styles */
+    .login-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      background: #1d1f27;
+      margin-top: 5px;
+    }
+
+    .login-form-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .login-form-container h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #3498db;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .register-link a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #111;
+      padding: 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .footer-about, .footer-links {
+      text-align: left;
+    }
+
+    .footer-about h3 {
+      font-size: 1.2rem;
+      color: #5e5eff;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 5px;
+      color: #5e5eff;
+    }
+
+    .social-icons i {
+      margin-inline: 10px;
+      color: #5e5eff;
+      cursor: pointer;
+    }
+
+    .social-icons i:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <header class="header">
+      <div class="logo">G Y M - R E A C T Coach</div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#bmi-calculator">Calculate BMI</a></li>
+          <li><a href="#trainers">Trainers</a></li>
+          <li><a href="#services-section">Services</a></li>
+          <li><a href="#exercises">Exercises</a></li>
+          <li><a href="#pricing-plans">Pricing Plan</a></li>
+          <li><a href="#q">Questionary</a></li>
+          <li><a href="#footer">Contact</a></li>
+          <li><a href="#" class="btn">Become A Member</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="login" class="login-section">
+      <div class="login-form-container">
+        <h2>Coach Login</h2>
+        <form>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <p class="register-link">Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>GYM</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown USA</p>
+          <p><i class="fas fa-envelope"></i> gtechgym@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li>Strength Training</li>
+            <li>Yoga Session</li>
+            <li>Deadlift Challenge</li>
+            <li>Squats Challenge</li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Pricing Plan</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

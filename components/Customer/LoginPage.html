@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>GYM - REACT Customer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #898080;
+        }
+        .header {
+            background: #4a4e69;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            font-size: 28px;
+            color: #040404;
+            font-weight: bold;
+        }
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            background: #1d1f27;
+        }
+        .login-form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+            width: 100%;
+            padding: 12px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .footer {
+            background-color: #2b2b2b;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .social-icons i {
+            margin: 0 10px;
+            color: #5e5eff;
+        }
+        .social-icons i:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header d-flex justify-content-between align-items-center">
+    <div class="logo">G Y M - R E A C T Customer</div>
+    <nav class="nav">
+        <ul class="d-flex list-unstyled">
+            <li class="mx-2"><a href="#" class="text-white">Home</a></li>
+            <li class="mx-2"><a href="#about" class="text-white">About</a></li>
+            <li class="mx-2"><a href="#bmi-calculator" class="text-white">Calculate BMI</a></li>
+            <li class="mx-2"><a href="#trainers" class="text-white">Trainers</a></li>
+            <li class="mx-2"><a href="#services-section" class="text-white">Services</a></li>
+            <li class="mx-2"><a href="#exercises" class="text-white">Exercises</a></li>
+            <li class="mx-2"><a href="#pricing-plans" class="text-white">Pricing Plan</a></li>
+            <li class="mx-2"><a href="#q" class="text-white">Questionary</a></li>
+            <li class="mx-2"><a href="#footer" class="text-white">Contact</a></li>
+            <li class="mx-2"><a href="#" class="btn btn-primary">Become A Member</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="login" class="login-section">
+    <div class="login-form-container">
+        <h2>User Login</h2>
+        <form onsubmit="event.preventDefault(); login();">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <p class="register-link text-center mt-3">Don't have an account? <a href="/register" class="text-primary">Register</a></p>
+    </div>
+</section>
+
+<footer id="footer" class="footer">
+    <div class="footer-content d-flex justify-content-around">
+        <div class="footer-about">
+            <h3>GYM</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown USA</p>
+            <p><i class="fas fa-envelope"></i> gtechgym@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+        </div>
+        <div class="footer-links">
+            <h4>Services</h4>
+            <ul class="list-unstyled">
+                <li>Strength Training</li>
+                <li>Yoga Session</li>
+                <li>Deadlift Challenge</li>
+                <li>Squats Challenge</li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Link</h4>
+            <ul class="list-unstyled">
+                <li>Home</li>
+                <li>About</li>
+                <li>Pricing Plan</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom d-flex justify-content-center">
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function login() {
+        // Handle login logic here (e.g., call API)
+        alert('Login successful!');
+
+        // Reset form
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+    }
+</script>
+
+</body>
+</html>

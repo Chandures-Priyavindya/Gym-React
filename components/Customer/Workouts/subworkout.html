@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>GYM REACT-subworkout</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #898080;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header {
+            background: #4a4e69;
+            padding: 10px 20px;
+        }
+        .logo {
+            font-size: 28px;
+            color: #040404;
+            font-weight: bold;
+        }
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .table {
+            color: #fff;
+            text-align: center;
+        }
+        .day-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .day-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .btn-start {
+            
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-start:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: #2b2b2b;
+            color: #fff;
+            padding: 20px;
+        }
+        .social-icons i {
+            margin: 0 10px;
+            color: #5e5eff;
+        }
+        .social-icons i:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <header class="header d-flex justify-content-between align-items-center">
+            <div class="logo">G Y M - R E A C T Days</div>
+            <nav class="nav">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container workout-plan mt-4">
+            <div class="row plan-header mb-4">
+                <div class="col-auto">
+                    <img src="https://i.pinimg.com/originals/9b/07/ca/9b07ca194f821a0ba4a67a0571acad14.jpg" alt="Workout Plan" class="img-fluid" style="width: 60px; height: 60px; border-radius: 10px;">
+                </div>
+                <div class="col">
+                    <h2>IMMUNITY BOOSTER AT HOME</h2>
+                    <p>30 minutes | 31 days</p>
+                </div>
+                <div class="col-auto text-center">
+                    <p>INTENSITY</p>
+                    <h3>70%</h3>
+                </div>
+            </div>
+
+            <!-- Table with 31 Days -->
+            <div class="table-responsive">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Loop through all 31 days -->
+                        <!-- You can adjust the time and status for each day dynamically -->
+                        <!-- Example: Day 1 -->
+                        <!-- 1 to 31 -->
+                        <tr>
+                            <td>Day 1</td>
+                            <td>08:38</td>
+                            <td><button type="submit" class="btn btn-primary mt-4 mx-2" onclick="openLocalFile()">Start</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 2</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 3</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr></tr>
+                            <td>Day 4</td>
+                            <td>08:38</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 5</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 6</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Day 7</td>
+                            <td>10:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr></tr>
+                            <td>Day 8</td>
+                            <td>08:38</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 9</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 10</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr></tr>
+                            <td>Day 11</td>
+                            <td>08:38</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 12</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 13</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Day 14</td>
+                            <td>10:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr></tr>
+                            <td>Day 15</td>
+                            <td>08:38</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 16</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 17</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr></tr>
+                            <td>Day 18</td>
+                            <td>08:38</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 19</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 20</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Day 21</td>
+                            <td>10:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr></tr>
+                            <td>Day 22</td>
+                            <td>08:38</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 23</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 24</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr></tr>
+                            <td>Day 25</td>
+                            <td>08:38</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 26</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 27</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Day 28</td>
+                            <td>10:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr></tr>
+                            <td>Day 29</td>
+                            <td>09:00</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        <tr>
+                            <td>Day 30</td>
+                            <td>09:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Day 31</td>
+                            <td>10:30</td>
+                            <td><button type="submit" class="btn btn-danger mt-4 mx-2">Locked</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer id="footer" class="footer mt-4">
+            <div class="container">
+                <div class="row footer-content">
+                    <div class="col-md-4 footer-about">
+                        <h3>GYM</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown USA</p>
+                        <p><i class="fas fa-envelope"></i> gtechgym@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+                    </div>
+                    <div class="col-md-4 footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>Strength Training</li>
+                            <li>Yoga Session</li>
+                            <li>Deadlift Challenge</li>
+                            <li>Squats Challenge</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Pricing Plan</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom text-center">
+                    <div class="social-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function openLocalFile() {
+            // Change the path to your target file here
+            window.location.href = "DailyWorkout.html";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

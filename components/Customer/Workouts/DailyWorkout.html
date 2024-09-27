@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM - Daily Workouts</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #898080;
+        }
+        .header {
+            background: #4a4e69;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            font-size: 28px;
+            color: #040404;
+            font-weight: bold;
+        }
+        .workout-plan {
+            background-color: #121212;
+            color: white;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .plan-image {
+            width: 30%;
+            border-radius: 10px;
+        }
+        .btn-guide {
+            background-color: #ff0000;
+            color: white;
+        }
+        .exercise-item {
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .btn-start {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #111;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="login">
+    <header class="header d-flex justify-content-between align-items-center">
+        <div class="logo">G Y M - R E A C T Daily Workouts</div>
+        <nav class="nav">
+            <ul class="list-unstyled d-flex">
+                <li class="mr-3"><a href="#" class="text-white">Home</a></li>
+                <li class="mr-3"><a href="#about" class="text-white">About</a></li>
+                <li><a href="#footer" class="text-white">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="workout-plan">
+        <div class="plan-header text-center">
+            <img src="https://i.pinimg.com/736x/c9/63/13/c96313660a8fe1746d61f6578a4d9214.jpg?b=t" alt="About Us" class="plan-image">
+            <h2>BEGINNER PLAN - BODYWEIGHT</h2>
+            <div class="day-info">
+                <h3>DAY 1</h3>
+                <p>Introduction</p>
+            </div>
+            <div class="workout-stats d-flex justify-content-around">
+                <div class="stat">
+                    <p>16</p>
+                    <span>Workouts</span>
+                </div>
+                <div class="stat">
+                    <p>≈ 80 kcal</p>
+                    <span>Calories</span>
+                </div>
+                <div class="stat">
+                    <p>08:38</p>
+                    <span>Duration</span>
+                </div>
+            </div>
+            <div class="guide d-flex justify-content-between">
+                <button class="btn-guide btn">Guide</button>
+                <button class="btn-guide btn">Watch video</button>
+            </div>
+        </div>
+
+        <ul class="list-unstyled exercise-list">
+            <li class="exercise-row">
+                <div class="exercise-item d-flex align-items-center mb-2">
+                    <img src="https://i.pinimg.com/736x/c9/63/13/c96313660a8fe1746d61f6578a4d9214.jpg?b=t" alt="Exercise Image" class="img-fluid mr-2" style="width: 50px; height: 50px;">
+                    <div class="exercise-info">
+                        <h3 class="text4">DYNAMIC CHEST</h3>
+                        <p class="text4">10*5</p>
+                    </div>
+                </div>
+                <div class="exercise-item d-flex align-items-center mb-2">
+                    <img src="https://i.pinimg.com/736x/c9/63/13/c96313660a8fe1746d61f6578a4d9214.jpg?b=t" alt="Exercise Image" class="img-fluid mr-2" style="width: 50px; height: 50px;">
+                    <div class="exercise-info">
+                        <h3 class="text4">TRICEPS DIPS</h3>
+                        <p class="text4">15*5</p>
+                    </div>
+                </div>
+                <div class="exercise-item d-flex align-items-center mb-2">
+                    <img src="https://i.pinimg.com/736x/c9/63/13/c96313660a8fe1746d61f6578a4d9214.jpg?b=t" alt="Exercise Image" class="img-fluid mr-2" style="width: 50px; height: 50px;">
+                    <div class="exercise-info">
+                        <h3 class="text4">PUSH-UPS</h3>
+                        <p class="text4">10*5</p>
+                    </div>
+                </div>
+                <div class="exercise-item d-flex align-items-center mb-2">
+                    <img src="https://i.pinimg.com/736x/c9/63/13/c96313660a8fe1746d61f6578a4d9214.jpg?b=t" alt="Exercise Image" class="img-fluid mr-2" style="width: 50px; height: 50px;">
+                    <div class="exercise-info">
+                        <h3 class="text4">DIAGONAL PLANK</h3>
+                        <p class="text4">60sec</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <button class="btn-start btn">START</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer mt-4">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-md-4 footer-about">
+                    <h3>GYM</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown USA</p>
+                    <p><i class="fas fa-envelope"></i> gtechgym@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+                </div>
+                <div class="col-md-4 footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Strength Training</li>
+                        <li>Yoga Session</li>
+                        <li>Deadlift Challenge</li>
+                        <li>Squats Challenge</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Pricing Plan</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
